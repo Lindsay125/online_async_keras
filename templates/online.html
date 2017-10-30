@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Online Deep Learning</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	<link href="/static/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/css/owl.carousel.css">
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/fileinput.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/static/js/fileinput.min.js"></script>
+	<!--[if lt IE 9]-->
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+	<!--[endif]-->
+	<style type="text/css">
+  		input {    margin : 5px 5px 5px 0px}
+	</style>
+</head>
+<body>
+<!--header starts-->
+<header class="main-header">
+	<div class="backbg-color">
+		<div class="navigation-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<!--navigation starts-->
+
+						<!--navigation ends-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--banner starts-->
+		<div class="banner-text">
+			<div class="container">
+				<div class="row">
+					<div class="banner-heading text-center">
+						<h1>Online Deep learning</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--banner ends-->
+</header>
+
+
+
+<div class="client" id="api" style="padding-top:60px;">
+	<div class="container">
+		<div class="row">
+
+			<!-- <div class="col-md-4" style="padding-right:0px;">
+					<form action="/online" method="post"> 
+						<label>选择任务类型</label> 
+						<select name="task" class="selectpicker form-control"> 
+							<option value="0">MLPClassifier</option> 
+							<option value="1">MLPRegressor</option> 
+						</select>
+						<hr />
+						<p><strong>参数设置</strong></p>
+						<label>Hidden Layers</label>
+						<input name="hidden_layers" type="text" placeholder="2" value = "{{ HL }}">
+						<br>
+						<label>Hidden Unit</label>
+						<input name="hidden_unit" type="text" placeholder="5" value = "{{ HU }}">
+						<br>
+						<label>Maximum Iteration</label>
+						<input name="max_iter" type="text" placeholder="200" value = "{{ MI }}">
+						<br>
+						<label>Batch Size</label>
+						<input name="batch_size" type="text" placeholder="200" value = "{{ BS }}">
+						<br>
+						<label>Learning Rate</label>
+						<input name="learning_rate" type="text" placeholder="0.001" value = "{{ LR }}">
+						
+					</form> 
+			</div> -->
+
+
+			<div class="col-md-8" style="padding-right:0px;">
+					<form action="/online" method="post" enctype="multipart/form-data">
+						<div class="cli-info" style="padding-top:0px;padding-bottom:30px;">
+							<label>选择任务类型</label> 
+							<select name="task" class="selectpicker form-control"> 
+								<option value="0">MLPClassifier</option> 
+								<option value="1">MLPRegressor</option> 
+							</select>
+							<hr />
+							<p><strong>参数设置</strong></p>
+							<label>Hidden Layers</label>
+							<input name="hidden_layers" type="text" placeholder="2" value = "{{ HL }}">
+							<br>
+							<label>Hidden Unit</label>
+							<input name="hidden_unit" type="text" placeholder="5" value = "{{ HU }}">
+							<br>
+							<label>Epochs</label>
+							<input name="epochs" type="text" placeholder="2" value = "{{ EP }}">
+							<br>
+							<label>Batch Size</label>
+							<input name="batch_size" type="text" placeholder="128" value = "{{ BS }}">
+							<br>
+							<label>Learning Rate</label>
+							<input name="learning_rate" type="text" placeholder="0.001" value = "{{ LR }}">
+							<p>点击“Submit”上传训练集和测试集。<br/> <Strong>ps:输入文件要求：</Strong>csv格式，第一行为名称，第一列为label，后续列为feature。</p>
+								<p>请上传训练集文件.</p>
+									<input name="train_file" type="file" class="file">
+								<p>请上传测试集文件.</p>
+									<input name="test_file" type="file" class="file">
+									<br>
+									<button type="submit" name="action" value="Upload" class="btn btn-primary"><i class="fa fa-cloud-upload"></i>  Submit</button>
+									<button type="reset" class="btn btn-default"><i class="fa fa-refresh"></i>  Reset</button>
+									<br>
+									<br>
+									<label>Task_ID</label>
+									<input type="text" name = "task_id" value = "{{ TASK_ID }}"/>
+									<br>
+									<label>Status</label>
+									<input type="text" name="status" value = "{{ STATUS }}" >
+									<button type="submit" name="action" value="Check" class="btn btn-primary" style="float:right" ><i class="fa fa-cloud-download"></i> Check</button>
+
+									<p color="red">请记录Task_ID，以便断开重连后仍可以查询运行状态。</p>
+
+
+
+									<label>Classification Accuracy (ACC)</label>
+									<input type="text" name = "acc" readonly="readonly" value = "{{ ACC }}"/>
+									<br>
+									<label>Regression LOSS (MSE)</label>
+									<input type="text" name = "mse" readonly="readonly" value = "{{ MSE }}"/>
+
+									
+
+									<button type="submit" name="action" value="Download" class="btn btn-primary" style="float:right" ><i class="fa fa-cloud-download"></i> Download</button>
+									<p>请耐心等待预测结果，点按“Download”下载输出结果文件。</p>								
+						</div>
+					</form>
+			</div>
+
+			
+												
+		</div>
+
+	</div>
+
+
+</div>
+
+<script src="/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#warning-block").show();
+</script>
+
+
+<section class="footer-line">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<!--<p>Copyright &copy; 2017.Coulson Zhang. All rights reserved.</p> -->
+			</div>
+		</div>
+	</div>
+</section>
+<script src="/static/js/jquery.min.js"></script>
+
+
+
+<script type="text/javascript">
+   var oBtn = document.getElementById('btn');
+    oBtn.onclick = function(){
+		$("#tip_train").show();
+    };
+</script>
+<script type="text/javascript">
+    function test(id){
+        document.getElementById("query").value = id;
+    }
+</script>
+
+<script>
+$(function () {
+	$("[data-toggle='popover']").popover();
+});
+</script>
+
+</body>
+</html>

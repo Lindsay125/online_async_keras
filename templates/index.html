@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Stock Market Prediction</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+	<link href="/static/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/css/owl.carousel.css">
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/fileinput.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/static/js/fileinput.min.js"></script>
+	<!--[if lt IE 9]-->
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+	<!--[endif]-->
+</head>
+<body>
+<!--header starts-->
+<header class="main-header">
+	<div class="backbg-color">
+		<div class="navigation-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<!--navigation starts-->
+
+						<!--navigation ends-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--banner starts-->
+		<div class="banner-text">
+			<div class="container">
+				<div class="row">
+					<div class="banner-heading text-center">
+						<h3> Stock Market Prediction</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--banner ends-->
+</header>
+
+
+
+<div class="client" id="api" style="padding-top:60px;">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-6" style="padding-right:50px;">
+				<div>
+					<div class="sec-head">
+						<blockquote>
+							<h2>Train</h2>
+						</blockquote>
+					</div>
+					<div class="cli-info">
+							<div   style="padding-top:60px">
+								<a href="/train"><img src="/static/img/index_train.jpg" class="img-rounded"></a>
+					</div>
+					</div>
+
+
+				</div>
+			</div>
+
+			<div class="col-md-6" style="padding-right:50px;">
+				<div>
+					<div class="sec-head">
+						<blockquote>
+							<h2>Test</h2>
+						</blockquote>
+					</div>
+					<div class="cli-info">
+							<div   style="padding-top:60px">
+					<a href="/test"><img src="/static/img/index_test.jpg" class="img-rounded"></a>
+					</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+</div>
+
+<script src="/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $("#warning-block").show();
+</script>
+
+
+<section class="footer-line">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<p>Copyright &copy; 2017.SJTU BCMI Lab All rights reserved.</p>
+			</div>
+		</div>
+	</div>
+</section>
+<script src="/static/js/jquery.min.js"></script>
+
+
+
+<script type="text/javascript">
+   var oBtn = document.getElementById('btn');
+    oBtn.onclick = function(){
+		$("#tip_train").show();
+    };
+</script>
+<script type="text/javascript">
+    function test(id){
+        document.getElementById("query").value = id;
+    }
+</script>
+
+<script>
+$(function () {
+	$("[data-toggle='popover']").popover();
+});
+</script>
+
+</body>
+</html>
